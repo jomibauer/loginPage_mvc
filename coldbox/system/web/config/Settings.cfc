@@ -12,7 +12,7 @@ component {
 	this.authorEmail   = "info@ortussolutions.com";
 	this.authorWebsite = "https://www.ortussolutions.com";
 	this.suffix        = "Isaiah 40:29";
-	this.version       = "6.0.0+1296";
+	this.version       = "6.1.0-snapshot";
 	this.description   = "This is the ColdBox Platform for ColdFusion Powered Web Applications.";
 
 	// ColdBox Operational Defaults

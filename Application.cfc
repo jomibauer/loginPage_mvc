@@ -36,51 +36,42 @@ component {
 			COLDBOX_APP_MAPPING
 		);
 		application.cbBootstrap.loadColdbox();
+		session.user = 'guest';
+		session.LoggedIn = False;
+		
 		return true;
 	}
 
 	// application end
 	public void function onApplicationEnd( struct appScope ) {
 		arguments.appScope.cbBootstrap.onApplicationEnd( arguments.appScope );
-		Session.LoggedIn = false;
-
 	}
 
 	// request start
 	public boolean function onRequestStart( string targetPage ) {
 		// Process ColdBox Request
 		application.cbBootstrap.onRequestStart( arguments.targetPage );
-		var page = CGI.path_info;
-		if (page != "/signIn" && page != "/verifyUser/"){
-			checkLoginStatus(page);
+		if (session.LoggedIn == false){
+			var page = cgi.path_info;
+			if ((page != "/main/") && (page != "main/processVerifyUser")){
+				location(url="/main/?g=You have to login first");
+			}
 		}
+
 		return true;
 	}
 
 	public void function onSessionStart() {
 		application.cbBootStrap.onSessionStart();
-		Session.LoggedIn = false;
+		
 	}
 
 	public void function onSessionEnd( struct sessionScope, struct appScope ) {
 		arguments.appScope.cbBootStrap.onSessionEnd( argumentCollection = arguments );
-		Session.LoggedIn = false;
 	}
 
 	public boolean function onMissingTemplate( template ) {
 		return application.cbBootstrap.onMissingTemplate( argumentCollection = arguments );
 	}
-	<!--- writeDump(var = cgi, label = "CGI Scope"); --->
-	function checkLoginStatus( path ){
-		if (Session.LoggedIn == false){
-			location(url="/signIn?errorMsg=You need to login to view that page"); 
-			Session.cur_path = path;
 
-		}
-	}
-	
-
-	
 }
-
-

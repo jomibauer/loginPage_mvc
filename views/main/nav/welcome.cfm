@@ -2,12 +2,12 @@
 
 
 <div class="sec">
-	<form action="#event.buildLink( 'welcome.logout' )#" method="post">
-		<h1>#prc.welcomeMessage#</h1>
+	<form action="#event.buildLink(prc.xeh.process_logout)#" method="post">
+		<h1>Hello, #session.user#</h1>
 		<input type="submit" name= "logout" value="Logout" id="submit-button">
 	</form>
 </div>
 
-<cfdump var="#Session#">
+<cfdump var="#session#">
 
 </cfoutput>

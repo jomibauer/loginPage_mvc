@@ -138,7 +138,7 @@ component serializable="false" accessors="true" implements="coldbox.system.ioc.I
 		// Scope Storages
 		variables.scopeStorage = new coldbox.system.core.collections.ScopeStorage();
 		// Version
-		variables.version      = "6.0.0+1296";
+		variables.version      = "6.1.0-snapshot";
 		// The Configuration Binder object
 		variables.binder       = "";
 		// ColdBox Application Link

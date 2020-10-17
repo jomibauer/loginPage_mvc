@@ -83,7 +83,7 @@ component accessors="true"{
 		// Category Appenders
 		variables.categoryAppenders = "";
 		// Version
-		variables.version           = "6.0.0+1296";
+		variables.version           = "6.1.0-snapshot";
 
 		// Link incoming ColdBox instance
 		variables.coldbox = arguments.coldbox;

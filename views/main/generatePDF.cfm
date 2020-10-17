@@ -18,5 +18,3 @@
 	<cfoutput> #TimeFormat(Now())# on #DateFormat(Now())#</cfoutput>
 </cfdocumentitem>
 </cfdocument>
-
-

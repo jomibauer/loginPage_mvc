@@ -1,6 +1,6 @@
 <cfoutput>
 <div class="sec">
-	<a href="/file_viewer.cfm">< < BACK</a><br>
+	<a href=#event.buildLink("main/view_fileViewer")#>< < BACK</a><br>
 
 	<cfset imgPath = "/includes/mywebsitefiles/" & #prc.image#>
 	<div class="img-box">
